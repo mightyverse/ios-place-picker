@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationPickerViewController.h"
+@class LocationPickerViewController;
 
 @interface ViewController : UIViewController
+
+@property (strong, readwrite) LocationPickerViewController *locationPickerController;
 
 @end

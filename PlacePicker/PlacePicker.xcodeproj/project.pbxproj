@@ -22,6 +22,8 @@
 		400819D31B0DA89300F503CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400819B21B0DA89300F503CA /* UIKit.framework */; };
 		400819DB1B0DA89300F503CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 400819D91B0DA89300F503CA /* InfoPlist.strings */; };
 		400819DD1B0DA89300F503CA /* PlacePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819DC1B0DA89300F503CA /* PlacePickerTests.m */; };
+		400819E81B15186900F503CA /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819E71B15186900F503CA /* LocationPickerViewController.m */; };
+		400819EB1B15188200F503CA /* LocationPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819EA1B15188200F503CA /* LocationPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		400819D81B0DA89300F503CA /* PlacePickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlacePickerTests-Info.plist"; sourceTree = "<group>"; };
 		400819DA1B0DA89300F503CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		400819DC1B0DA89300F503CA /* PlacePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacePickerTests.m; sourceTree = "<group>"; };
+		400819E61B15186900F503CA /* LocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPickerViewController.h; sourceTree = "<group>"; };
+		400819E71B15186900F503CA /* LocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerViewController.m; sourceTree = "<group>"; };
+		400819E91B15188200F503CA /* LocationPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPickerView.h; sourceTree = "<group>"; };
+		400819EA1B15188200F503CA /* LocationPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,10 @@
 				400819C71B0DA89300F503CA /* ViewController.m */,
 				400819C91B0DA89300F503CA /* Images.xcassets */,
 				400819B51B0DA89300F503CA /* Supporting Files */,
+				400819E61B15186900F503CA /* LocationPickerViewController.h */,
+				400819E71B15186900F503CA /* LocationPickerViewController.m */,
+				400819E91B15188200F503CA /* LocationPickerView.h */,
+				400819EA1B15188200F503CA /* LocationPickerView.m */,
 			);
 			path = PlacePicker;
 			sourceTree = "<group>";
@@ -255,7 +265,9 @@
 			files = (
 				400819C81B0DA89300F503CA /* ViewController.m in Sources */,
 				400819BF1B0DA89300F503CA /* AppDelegate.m in Sources */,
+				400819EB1B15188200F503CA /* LocationPickerView.m in Sources */,
 				400819BB1B0DA89300F503CA /* main.m in Sources */,
+				400819E81B15186900F503CA /* LocationPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +482,7 @@
 				400819E21B0DA89300F503CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		400819E31B0DA89300F503CA /* Build configuration list for PBXNativeTarget "PlacePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +491,7 @@
 				400819E51B0DA89300F503CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
