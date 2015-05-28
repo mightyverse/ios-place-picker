@@ -18,6 +18,7 @@
 - (id)init
 {
     self = [super init];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     NSLog(@"HI");
     if (self != nil)
     {

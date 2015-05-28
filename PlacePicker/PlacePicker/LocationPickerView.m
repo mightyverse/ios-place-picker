@@ -9,16 +9,18 @@
 #import "LocationPickerView.h"
 
 @implementation LocationPickerView
+static int textFieldHeight = 30;
+static int statusBarPadding = 30;
+static int maxHeight = 200;
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, 30, 320, 200)];
+    self = [super initWithFrame:CGRectMake(0, statusBarPadding, 320, maxHeight)];
+    self.backgroundColor = [UIColor clearColor];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor redColor];
-        self.textField = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-        self.textField.delegate = self
-        self.possiblePlaces = @[@"hi", @"hello", @"howdy", @"help", @"hit"];
+        self.backgroundColor = [UIColor lightGrayColor];
+        [self setupTextField];
         [self setupTableView];
 
     }
@@ -32,30 +34,57 @@
     [self addSubview:self.textField];
 }
 
+- (void)setupTextField
+{
+    int leftOffset = 10;
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(leftOffset, 0, 320, textFieldHeight)];
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField.backgroundColor = [UIColor blackColor];
+    self.textField.textColor = [UIColor whiteColor];
+    self.textField.delegate = self;
+
+    // Setup search icon
+    UILabel *magnifyingGlass = [[UILabel alloc] init];
+    [magnifyingGlass setText:[[NSString alloc] initWithUTF8String:"\xF0\x9F\x94\x8D"]];
+    [magnifyingGlass sizeToFit];
+    
+    [self.textField setLeftView:magnifyingGlass];
+    [self.textField setLeftViewMode:UITextFieldViewModeAlways];
+    
+    // Setup data arrays
+    self.possiblePlaces = @[@"hi", @"hello", @"howdy", @"help", @"hit"];
+    self.foundMatches = [[NSMutableArray alloc]init];
+}
+
+
 - (void)setupTableView
 {
     self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                             CGRectMake(0, 30, 320, 120) style:UITableViewStylePlain];
+                             CGRectMake(0, textFieldHeight, 320, maxHeight-textFieldHeight) style:UITableViewStylePlain];
     [self.autocompleteTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.autocompleteTableView setBackgroundColor:[UIColor whiteColor]];
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
-    self.autocompleteTableView.hidden = NO;
+    self.autocompleteTableView.hidden = YES;
     [self addSubview:self.autocompleteTableView];
-    
-    self.foundMatches = [[NSMutableArray alloc]init];
 }
 
 #pragma mark TextField Delegate Methods
-- (BOOL)textField:(UITextField *)textField
-shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     self.autocompleteTableView.hidden = NO;
     
     NSString *substring = [NSString stringWithString:textField.text];
     substring = [substring
                  stringByReplacingCharactersInRange:range withString:string];
     [self searchAutocompleteEntriesWithSubstring:substring];
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"Done editing");
+
     return YES;
 }
 
