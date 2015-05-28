@@ -10,16 +10,20 @@
 
 @implementation LocationPickerView
 static int textFieldHeight = 30;
-static int statusBarPadding = 30;
-static int maxHeight = 200;
+static int statusBarPadding = 20;
+static int textLabelHeight = 40;
+static int maxHeight = 80;
+static int textFieldWidth = 240;
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, statusBarPadding, 320, maxHeight)];
-    self.backgroundColor = [UIColor clearColor];
+    self = [super initWithFrame:CGRectMake(0, statusBarPadding, 320, [[UIScreen mainScreen] bounds].size.height)];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor colorWithRed:25/256.0 green:66/256.0 blue:86/256.0 alpha:0.90];
+        self.labelView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, maxHeight)];
+        [self addSubview:self.labelView];
+        self.labelView.backgroundColor = [UIColor colorWithRed:28/256.0 green:36/256.0 blue:40/256.0 alpha:0.90];
         [self setupTextField];
         [self setupTableView];
 
@@ -36,12 +40,25 @@ static int maxHeight = 200;
 
 - (void)setupTextField
 {
-    int leftOffset = 10;
-    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(leftOffset, 0, 320, textFieldHeight)];
+    int leftOffset = 5;
+    
+    self.textInstructions = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, textLabelHeight)];
+    [self.textInstructions setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+    [self.textInstructions setTextColor:[UIColor whiteColor]];
+    [self.textInstructions setText:@"Enter city, zip code, or airport location"];
+    [self.textInstructions setTextAlignment:NSTextAlignmentCenter];
+    [self.labelView addSubview:self.textInstructions];
+    
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(leftOffset, textLabelHeight, textFieldWidth, textFieldHeight)];
     self.textField.borderStyle = UITextBorderStyleRoundedRect;
     self.textField.backgroundColor = [UIColor blackColor];
     self.textField.textColor = [UIColor whiteColor];
     self.textField.delegate = self;
+    
+    self.cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(textFieldWidth + leftOffset + 5, textLabelHeight, textLabelHeight, 60)];
+    [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.cancelButton sizeToFit];
+    [self.labelView addSubview:self.cancelButton];
 
     // Setup search icon
     UILabel *magnifyingGlass = [[UILabel alloc] init];
@@ -60,13 +77,13 @@ static int maxHeight = 200;
 - (void)setupTableView
 {
     self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                             CGRectMake(0, textFieldHeight, 320, maxHeight-textFieldHeight) style:UITableViewStylePlain];
+                             CGRectMake(0, (2 * textFieldHeight) + 20, self.frame.size.width, self.frame.size.height - maxHeight) style:UITableViewStylePlain];
     [self.autocompleteTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.autocompleteTableView setBackgroundColor:[UIColor whiteColor]];
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = YES;
+    [self.autocompleteTableView setBackgroundColor:[UIColor clearColor]];
     [self addSubview:self.autocompleteTableView];
 }
 
@@ -123,8 +140,12 @@ static int maxHeight = 200;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     cell.textLabel.text = [self.foundMatches objectAtIndex:indexPath.row];
+    [cell setBackgroundColor:[UIColor clearColor]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
+
     return cell;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

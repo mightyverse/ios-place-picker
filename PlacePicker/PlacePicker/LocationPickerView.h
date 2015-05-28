@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationPickerView : UIView <UITextFieldDelegate,UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) UITextField* textField;
-@property (strong, nonatomic) UITableView* autocompleteTableView;
+@property (strong, nonatomic) UIView *labelView;
+@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) UILabel *textInstructions;
+@property (strong, nonatomic) UITableView *autocompleteTableView;
 @property (strong, nonatomic) NSMutableArray *foundMatches;
 @property (strong, nonatomic) NSArray *possiblePlaces;
+@property (strong, nonatomic) UIButton *cancelButton;
 @end

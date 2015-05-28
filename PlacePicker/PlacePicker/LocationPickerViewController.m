@@ -19,6 +19,8 @@
 {
     self = [super init];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+
     NSLog(@"HI");
     if (self != nil)
     {
