@@ -12,11 +12,13 @@
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 100)];
+    self = [super initWithFrame:CGRectMake(0, 30, 320, 200)];
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor redColor];
         self.textField = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+        self.textField.delegate = self
+        self.possiblePlaces = @[@"hi", @"hello", @"howdy", @"help", @"hit"];
         [self setupTableView];
 
     }
@@ -41,6 +43,8 @@
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = NO;
     [self addSubview:self.autocompleteTableView];
+    
+    self.foundMatches = [[NSMutableArray alloc]init];
 }
 
 #pragma mark TextField Delegate Methods
@@ -59,13 +63,13 @@ shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)strin
     
     // Put anything that starts with this substring into the autocompleteUrls array
     // The items in this array is what will show up in the table view
-//    [autocompleteUrls removeAllObjects];
-//    for(NSString *curString in pastUrls) {
-//        NSRange substringRange = [curString rangeOfString:substring];
-//        if (substringRange.location == 0) {
-//            [autocompleteUrls addObject:curString];
-//        }
-//    }
+    [self.foundMatches removeAllObjects];
+    for(NSString *curString in self.possiblePlaces) {
+        NSRange substringRange = [curString rangeOfString:substring];
+        if (substringRange.location == 0) {
+            [self.foundMatches addObject:curString];
+        }
+    }
     [self.autocompleteTableView reloadData];
 }
 
@@ -78,7 +82,7 @@ shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)strin
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;    //count number of row from counting array hear cataGorry is An Array
+    return [self.foundMatches count];    //count number of row from counting array hear cataGorry is An Array
 }
 
 
@@ -89,7 +93,7 @@ shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)strin
     static NSString *MyIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    cell.textLabel.text = @"hi";
+    cell.textLabel.text = [self.foundMatches objectAtIndex:indexPath.row];
     return cell;
 }
 

@@ -11,4 +11,6 @@
 @interface LocationPickerView : UIView <UITextFieldDelegate,UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) UITextField* textField;
 @property (strong, nonatomic) UITableView* autocompleteTableView;
+@property (strong, nonatomic) NSMutableArray *foundMatches;
+@property (strong, nonatomic) NSArray *possiblePlaces;
 @end
