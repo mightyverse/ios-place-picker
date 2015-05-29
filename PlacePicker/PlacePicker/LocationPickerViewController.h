@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "LocationPickerView.h"
+#import "LocationPickerMapViewController.h"
 
-@interface LocationPickerViewController : UIViewController
+@interface LocationPickerViewController : UIViewController <LocationPickerDelegate>
 @property (strong, nonatomic) LocationPickerView *locationPickerView;
 
 @end

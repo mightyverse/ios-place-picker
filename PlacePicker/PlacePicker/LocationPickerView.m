@@ -7,13 +7,17 @@
 //
 
 #import "LocationPickerView.h"
+#import "LocationPickerMapViewController.h"
 
 @implementation LocationPickerView
+
 static int textFieldHeight = 30;
 static int statusBarPadding = 20;
 static int textLabelHeight = 40;
 static int maxHeight = 80;
 static int textFieldWidth = 240;
+
+@synthesize delegate;
 
 - (id)init
 {
@@ -146,6 +150,11 @@ static int textFieldWidth = 240;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Selected row");
+    [self.delegate didSelectLocation:[[CLLocation alloc] initWithLatitude:117.0 longitude:38.0]];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

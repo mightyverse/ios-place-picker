@@ -7,6 +7,7 @@
 //
 
 #import "LocationPickerViewController.h"
+#import "LocationPickerMapViewController.h"
 
 @interface LocationPickerViewController ()
 
@@ -21,10 +22,10 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
-    NSLog(@"HI");
     if (self != nil)
     {
         self.locationPickerView = [[LocationPickerView alloc]init];
+        self.locationPickerView.delegate = self;
     }
     return self;
 }
@@ -47,7 +48,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)didSelectLocation:(CLLocation*)location
+{
+    NSLog(@"hi did select");
+    LocationPickerMapViewController *mapViewController = [[LocationPickerMapViewController alloc]init];
+    [self presentViewController:mapViewController animated:NO completion:^{
+        NSLog(@"Presented View controller");
+    }];
+}
 /*
 #pragma mark - Navigation
 

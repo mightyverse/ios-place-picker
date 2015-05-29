@@ -24,6 +24,8 @@
 		400819DD1B0DA89300F503CA /* PlacePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819DC1B0DA89300F503CA /* PlacePickerTests.m */; };
 		400819E81B15186900F503CA /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819E71B15186900F503CA /* LocationPickerViewController.m */; };
 		400819EB1B15188200F503CA /* LocationPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819EA1B15188200F503CA /* LocationPickerView.m */; };
+		404C5E9C1B16E8AF00FABE27 /* LocationPickerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */; };
+		404C5E9E1B16E9A400FABE27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404C5E9D1B16E9A400FABE27 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		400819E71B15186900F503CA /* LocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerViewController.m; sourceTree = "<group>"; };
 		400819E91B15188200F503CA /* LocationPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPickerView.h; sourceTree = "<group>"; };
 		400819EA1B15188200F503CA /* LocationPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerView.m; sourceTree = "<group>"; };
+		404C5E9A1B16E8AF00FABE27 /* LocationPickerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPickerMapViewController.h; path = ../LocationPickerMapViewController.h; sourceTree = "<group>"; };
+		404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPickerMapViewController.m; path = ../LocationPickerMapViewController.m; sourceTree = "<group>"; };
+		404C5E9D1B16E9A400FABE27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404C5E9E1B16E9A400FABE27 /* MapKit.framework in Frameworks */,
 				400819B11B0DA89300F503CA /* CoreGraphics.framework in Frameworks */,
 				400819B31B0DA89300F503CA /* UIKit.framework in Frameworks */,
 				400819AF1B0DA89300F503CA /* Foundation.framework in Frameworks */,
@@ -109,6 +115,7 @@
 		400819AD1B0DA89300F503CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				404C5E9D1B16E9A400FABE27 /* MapKit.framework */,
 				400819AE1B0DA89300F503CA /* Foundation.framework */,
 				400819B01B0DA89300F503CA /* CoreGraphics.framework */,
 				400819B21B0DA89300F503CA /* UIKit.framework */,
@@ -120,6 +127,8 @@
 		400819B41B0DA89300F503CA /* PlacePicker */ = {
 			isa = PBXGroup;
 			children = (
+				404C5E9A1B16E8AF00FABE27 /* LocationPickerMapViewController.h */,
+				404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */,
 				400819BD1B0DA89300F503CA /* AppDelegate.h */,
 				400819BE1B0DA89300F503CA /* AppDelegate.m */,
 				400819C01B0DA89300F503CA /* Main_iPhone.storyboard */,
@@ -267,6 +276,7 @@
 				400819BF1B0DA89300F503CA /* AppDelegate.m in Sources */,
 				400819EB1B15188200F503CA /* LocationPickerView.m in Sources */,
 				400819BB1B0DA89300F503CA /* main.m in Sources */,
+				404C5E9C1B16E8AF00FABE27 /* LocationPickerMapViewController.m in Sources */,
 				400819E81B15186900F503CA /* LocationPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
