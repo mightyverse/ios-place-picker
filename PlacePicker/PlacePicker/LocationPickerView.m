@@ -41,7 +41,7 @@ static int textFieldWidth = 240;
 
 - (void)setupTextField
 {
-    int leftOffset = 5;
+    int leftOffset = 8;
     
     self.textInstructions = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, textLabelHeight)];
     [self.textInstructions setFont:[UIFont fontWithName:@"Helvetica" size:12]];

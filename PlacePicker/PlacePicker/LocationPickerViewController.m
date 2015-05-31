@@ -74,9 +74,9 @@ static int cellHeight = 40;
         if (countryname.length > 0) {
             dataComponents = [countryname componentsSeparatedByString:@","];
             
-            double latitude = [(NSString*)[dataComponents objectAtIndex:1] doubleValue];
-            double longitude = [(NSString*)[dataComponents objectAtIndex:2] doubleValue];
-            NSString *description = [dataComponents objectAtIndex:0];
+            double latitude = [(NSString*)[dataComponents objectAtIndex:3] doubleValue];
+            double longitude = [(NSString*)[dataComponents objectAtIndex:4] doubleValue];
+            NSString *description = [NSString stringWithFormat:@"%@,%@",[dataComponents objectAtIndex:0], [dataComponents objectAtIndex:1]];
             CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
             if (self.dictionaryOfPlaces[description]) {
                 [self.dictionaryOfPlaces[description] addObject:newLocation];
