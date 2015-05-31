@@ -147,10 +147,21 @@ static int textFieldHeight = 80;
     static NSString *MyIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    cell.textLabel.text = [self.foundMatches objectAtIndex:indexPath.row];
-    [cell setBackgroundColor:[UIColor clearColor]];
+    // Make the text half bold
+    NSRange selectedRange = NSMakeRange(0, [self.currentSubstring length]); // 4 characters, starting at index 22
+    
+    NSMutableAttributedString *attributedMatchString = [[NSMutableAttributedString alloc] initWithString:[self.foundMatches objectAtIndex:indexPath.row]];
+    [attributedMatchString beginEditing];
+    [attributedMatchString addAttribute:NSFontAttributeName
+                   value:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]
+                   range:selectedRange];
+    [attributedMatchString endEditing];
+    
+    [cell.textLabel setAttributedText:attributedMatchString];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     
+    [cell setBackgroundColor:[UIColor clearColor]];
+
     return cell;
 }
 
