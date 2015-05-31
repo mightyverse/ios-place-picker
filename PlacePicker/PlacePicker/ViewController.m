@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor grayColor]];
 	// Do any additional setup after loading the view, typically from a nib.
     self.locationPickerController = [[LocationPickerViewController alloc] init];
 }
@@ -25,7 +24,7 @@
 - (void)viewWillLayoutSubviews
 {
     [self presentViewController:self.locationPickerController animated:NO completion:^{
-        NSLog(@"View did appear");
+        NSLog(@"Picker View was presented");
     }];
 }
 

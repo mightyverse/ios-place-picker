@@ -28,10 +28,22 @@ static int labelHeight = 40;
     self.mapView.showsUserLocation = YES;
     self.mapView.mapType = MKMapTypeHybrid;
     self.mapView.delegate = self;
+    
+    // Create annotation showing location of city
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:self.location.coordinate];
-    [annotation setTitle:self.description]; //You can set the subtitle too
+    [annotation setTitle:self.description];
     [self.mapView addAnnotation:annotation];
+    
+    // Zoom into where annotation is
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = self.location.coordinate;
+    mapRegion.span = MKCoordinateSpanMake(0.2, 0.2);
+    [self.mapView setRegion:mapRegion animated: YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+
 }
 
 - (void)setupBottomLabelView

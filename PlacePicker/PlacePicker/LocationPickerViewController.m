@@ -17,16 +17,12 @@
 
 static int barOffset = 18;
 static int textFieldHeight = 80;
-static int cellHeight = 40;
 
 - (id)init
 {
     self = [super init];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-
-    if (self != nil)
-    {
+    
+    if (self != nil){
         self.view.backgroundColor = [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0];
         [self setupLocationPickerView];
         [self setupCountryData];
@@ -54,8 +50,8 @@ static int cellHeight = 40;
     self.locationPickerView.delegate = self;
 }
 
-
-
+// Do all the parsing and populate a dictionary where keys are the description, and value is the lat long
+// in a CLLocation Object.
 - (void)setupCountryData
 {
     NSString *strPath = [[NSBundle mainBundle] pathForResource:@"cities" ofType:@"csv"];
@@ -87,9 +83,9 @@ static int cellHeight = 40;
             }
         }
     }
-    NSLog(@"Countries Count: %i", [arrayCountry count]);
 }
 
+// The tableview of possible values
 -(void)setupTableView
 {
     int locationHeight = self.locationPickerView.frame.size.height;
@@ -159,7 +155,6 @@ static int cellHeight = 40;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected row");
     NSString *description = [self.foundMatches objectAtIndex:indexPath.row];
     CLLocation *location = [[self.dictionaryOfPlaces objectForKey:description]objectAtIndex:0];
     [self didSelectLocation:location withDescription:description];
@@ -168,10 +163,9 @@ static int cellHeight = 40;
 #pragma mark MapView related methods
 - (void)didSelectLocation:(CLLocation*)location withDescription:(NSString*)description
 {
-    NSLog(@"hi did select");
     LocationPickerMapViewController *mapViewController = [[LocationPickerMapViewController alloc]initWithLocation:location description:description];
     [self presentViewController:mapViewController animated:NO completion:^{
-        NSLog(@"Presented View controller");
+        NSLog(@"Presented Map View controller");
     }];
 }
 
