@@ -26,6 +26,7 @@
 		400819EB1B15188200F503CA /* LocationPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 400819EA1B15188200F503CA /* LocationPickerView.m */; };
 		404C5E9C1B16E8AF00FABE27 /* LocationPickerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */; };
 		404C5E9E1B16E9A400FABE27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404C5E9D1B16E9A400FABE27 /* MapKit.framework */; };
+		404C5EA01B1907A100FABE27 /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 404C5E9F1B1907A100FABE27 /* cities.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		404C5E9A1B16E8AF00FABE27 /* LocationPickerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPickerMapViewController.h; path = ../LocationPickerMapViewController.h; sourceTree = "<group>"; };
 		404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPickerMapViewController.m; path = ../LocationPickerMapViewController.m; sourceTree = "<group>"; };
 		404C5E9D1B16E9A400FABE27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		404C5E9F1B1907A100FABE27 /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		400819B41B0DA89300F503CA /* PlacePicker */ = {
 			isa = PBXGroup;
 			children = (
+				404C5E9F1B1907A100FABE27 /* cities.csv */,
 				404C5E9A1B16E8AF00FABE27 /* LocationPickerMapViewController.h */,
 				404C5E9B1B16E8AF00FABE27 /* LocationPickerMapViewController.m */,
 				400819BD1B0DA89300F503CA /* AppDelegate.h */,
@@ -252,6 +255,7 @@
 			files = (
 				400819C51B0DA89300F503CA /* Main_iPad.storyboard in Resources */,
 				400819CA1B0DA89300F503CA /* Images.xcassets in Resources */,
+				404C5EA01B1907A100FABE27 /* cities.csv in Resources */,
 				400819C21B0DA89300F503CA /* Main_iPhone.storyboard in Resources */,
 				400819B91B0DA89300F503CA /* InfoPlist.strings in Resources */,
 			);

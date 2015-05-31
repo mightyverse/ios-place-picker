@@ -10,7 +10,11 @@
 #import <MapKit/MapKit.h>
 
 @interface LocationPickerMapViewController : UIViewController <MKMapViewDelegate>
+- (id)initWithLocation:(CLLocation*)location description:(NSString*)description;
 
 @property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, retain) NSString *description;
+@property (nonatomic, strong) UILabel *bottomLabel;
 
 @end

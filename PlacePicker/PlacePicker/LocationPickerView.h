@@ -11,19 +11,20 @@
 
 @protocol LocationPickerDelegate <NSObject>
 
-- (void)didSelectLocation:(CLLocation*)location;
+- (void)shouldHideTableview:(BOOL)shouldHideTableview;
+
+- (void)showPossibleMatchesForSubstring:(NSString*)substring;
+
+- (void)didSelectCancel;
 
 @end
 
-@interface LocationPickerView : UIView <UITextFieldDelegate,UITableViewDataSource, UITableViewDelegate>
+@interface LocationPickerView : UIView <UITextFieldDelegate>
 
 @property (strong, nonatomic) id <LocationPickerDelegate> delegate;
 
 @property (strong, nonatomic) UIView *labelView;
 @property (strong, nonatomic) UITextField *textField;
 @property (strong, nonatomic) UILabel *textInstructions;
-@property (strong, nonatomic) UITableView *autocompleteTableView;
-@property (strong, nonatomic) NSMutableArray *foundMatches;
-@property (strong, nonatomic) NSArray *possiblePlaces;
 @property (strong, nonatomic) UIButton *cancelButton;
 @end

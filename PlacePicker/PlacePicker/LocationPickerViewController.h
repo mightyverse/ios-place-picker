@@ -10,7 +10,12 @@
 #import "LocationPickerView.h"
 #import "LocationPickerMapViewController.h"
 
-@interface LocationPickerViewController : UIViewController <LocationPickerDelegate>
+@interface LocationPickerViewController : UIViewController <LocationPickerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) LocationPickerView *locationPickerView;
+@property (strong, nonatomic) UITableView *autocompleteTableView;
+@property (strong, nonatomic) NSMutableArray *foundMatches;
+@property (strong, nonatomic) NSArray *possiblePlaces;
+@property (strong, nonatomic) NSMutableDictionary *dictionaryOfPlaces;
+@property (strong, nonatomic) NSString *currentSubstring;
 
 @end
