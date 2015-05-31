@@ -22,6 +22,7 @@ static int textFieldHeight = 80;
 {
     self = [super init];
     
+    
     if (self != nil){
         self.view.backgroundColor = [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0];
         [self setupLocationPickerView];

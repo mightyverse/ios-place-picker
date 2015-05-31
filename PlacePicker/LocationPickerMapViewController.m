@@ -42,8 +42,10 @@ static int labelHeight = 40;
     [self.mapView setRegion:mapRegion animated: YES];
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-
+// Hide status bar for this view
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)setupBottomLabelView
