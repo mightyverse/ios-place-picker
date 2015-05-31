@@ -19,14 +19,25 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.locationPickerController = [[LocationPickerViewController alloc] init];
+    self.locationPickerController.delegate = self;
+//    [self presentViewController:self.locationPickerController animated:NO completion:^{
+//        NSLog(@"Picker View was presented");
+//    }];
+    [self.view addSubview:self.locationPickerController.view];
+
 }
 
 - (void)viewWillLayoutSubviews
 {
-    [self presentViewController:self.locationPickerController animated:NO completion:^{
-        NSLog(@"Picker View was presented");
-    }];
 }
+
+- (void)didPickLocation:(CLLocation*)location withDescription:(NSString*)description
+{
+    //[self dismissViewControllerAnimated:NO completion:nil];
+    [self.locationPickerController.view removeFromSuperview];
+    [self.view addSubview:self.locationPickerController.locationPickerMapController.view];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		400819AB1B0DA89300F503CA /* PlacePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		400819AB1B0DA89300F503CA /* PlacePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PlacePicker.app; path = "/Users/Viv/Documents/ios-place-picker/PlacePicker/build/Debug-iphoneos/PlacePicker.app"; sourceTree = "<absolute>"; };
 		400819AE1B0DA89300F503CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		400819B01B0DA89300F503CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		400819B21B0DA89300F503CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -55,7 +55,7 @@
 		400819C61B0DA89300F503CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		400819C71B0DA89300F503CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		400819C91B0DA89300F503CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		400819CF1B0DA89300F503CA /* PlacePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		400819CF1B0DA89300F503CA /* PlacePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = PlacePickerTests.xctest; path = "/Users/Viv/Documents/ios-place-picker/PlacePicker/build/Debug-iphoneos/PlacePickerTests.xctest"; sourceTree = "<absolute>"; };
 		400819D01B0DA89300F503CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		400819D81B0DA89300F503CA /* PlacePickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlacePickerTests-Info.plist"; sourceTree = "<group>"; };
 		400819DA1B0DA89300F503CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -101,17 +101,7 @@
 				400819B41B0DA89300F503CA /* PlacePicker */,
 				400819D61B0DA89300F503CA /* PlacePickerTests */,
 				400819AD1B0DA89300F503CA /* Frameworks */,
-				400819AC1B0DA89300F503CA /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		400819AC1B0DA89300F503CA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				400819AB1B0DA89300F503CA /* PlacePicker.app */,
-				400819CF1B0DA89300F503CA /* PlacePickerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		400819AD1B0DA89300F503CA /* Frameworks */ = {
@@ -139,11 +129,11 @@
 				400819C61B0DA89300F503CA /* ViewController.h */,
 				400819C71B0DA89300F503CA /* ViewController.m */,
 				400819C91B0DA89300F503CA /* Images.xcassets */,
-				400819B51B0DA89300F503CA /* Supporting Files */,
 				400819E61B15186900F503CA /* LocationPickerViewController.h */,
 				400819E71B15186900F503CA /* LocationPickerViewController.m */,
 				400819E91B15188200F503CA /* LocationPickerView.h */,
 				400819EA1B15188200F503CA /* LocationPickerView.m */,
+				400819B51B0DA89300F503CA /* Supporting Files */,
 			);
 			path = PlacePicker;
 			sourceTree = "<group>";
@@ -238,7 +228,7 @@
 				Base,
 			);
 			mainGroup = 400819A21B0DA89300F503CA;
-			productRefGroup = 400819AC1B0DA89300F503CA /* Products */;
+			productRefGroup = 400819A21B0DA89300F503CA;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

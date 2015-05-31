@@ -175,10 +175,11 @@ static int textFieldHeight = 80;
 #pragma mark MapView related methods
 - (void)didSelectLocation:(CLLocation*)location withDescription:(NSString*)description
 {
-    LocationPickerMapViewController *mapViewController = [[LocationPickerMapViewController alloc]initWithLocation:location description:description];
-    [self presentViewController:mapViewController animated:NO completion:^{
-        NSLog(@"Presented Map View controller");
-    }];
+    self.locationPickerMapController = [[LocationPickerMapViewController alloc]initWithLocation:location description:description];
+    [self.delegate didPickLocation:location withDescription:description];
+//    [self presentViewController:mapViewController animated:NO completion:^{
+//        NSLog(@"Presented Map View controller");
+//    }];
 }
 
 @end

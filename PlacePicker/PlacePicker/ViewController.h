@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LocationPickerViewController.h"
 @class LocationPickerViewController;
+@class LocationPickerControllerDelegate;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate>
 
 @property (strong, readwrite) LocationPickerViewController *locationPickerController;
 
