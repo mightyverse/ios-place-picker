@@ -100,7 +100,6 @@ static int cellHeight = 40;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = YES;
-    //self.autocompleteTableView.
     self.autocompleteTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:25/256.0 green:66/256.0 blue:86/256.0 alpha:0.90]];
