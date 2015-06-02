@@ -10,29 +10,29 @@
 	<string>PlacePicker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>A00B1371-F474-47DB-B4DF-19AF1C814094</key>
+		<key>3A93D12EF0C0C4B2738706AEAE17D02702D9CB66</key>
 		<string>ssh://github.com/mightyverse/ios-place-picker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PlacePicker/PlacePicker.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>A00B1371-F474-47DB-B4DF-19AF1C814094</key>
+		<key>3A93D12EF0C0C4B2738706AEAE17D02702D9CB66</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/mightyverse/ios-place-picker.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A00B1371-F474-47DB-B4DF-19AF1C814094</string>
+	<string>3A93D12EF0C0C4B2738706AEAE17D02702D9CB66</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>A00B1371-F474-47DB-B4DF-19AF1C814094</string>
+			<string>3A93D12EF0C0C4B2738706AEAE17D02702D9CB66</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ios-place-picker</string>
 		</dict>

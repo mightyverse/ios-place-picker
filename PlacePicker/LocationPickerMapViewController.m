@@ -11,13 +11,15 @@
 @implementation LocationPickerMapViewController
 
 static int labelHeight = 40;
+@synthesize description;
+@synthesize location;
 
-- (id)initWithLocation:(CLLocation*)location description:(NSString*)description
+- (id)initWithLocation:(CLLocation*)newLocation description:(NSString*)newDescription
 {
     self = [super init];
     if (self) {
-        self.description = description;
-        self.location = location;
+        description = newDescription;
+        location = newLocation;
     }
     return self;
 }
